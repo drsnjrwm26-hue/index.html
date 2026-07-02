@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>مؤسسة درسنج روم للأثاث</title>
+<meta name="description" content="غرف نوم تفصيل حسب الطلب | غرف جاهزة | غرف مودرن — تواصل بنا الآن"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#B8965A;--gold-l:#D4AF72;--gold-d:#8B6E3A;
+  --navy:#1E2D40;--cream:#FAF7F2;--white:#fff;
+  --green:#25D366;--blue:#1a73e8;
+  --r:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Tajawal',sans-serif;
+  background:linear-gradient(145deg,#1E2D40 0%,#3D2B1F 55%,#1E2D40 100%);
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px 14px 40px;
+}
+
+/* ── CARD ── */
+.card{
+  width:100%;max-width:440px;
+  background:var(--cream);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 20px 70px rgba(0,0,0,.45);
+  position:relative;
+}
+
+/* ── HEADER IMAGE BAND ── */
+.card-hero{
+  position:relative;
+  height:200px;
+  background:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&auto=format&fit=crop') center/cover no-repeat;
+}
+.card-hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(30,45,64,.55) 0%,rgba(30,45,64,.85) 100%);
+}
+.hero-content{
+  position:absolute;inset:0;z-index:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px;text-align:center;
+}
+.brand-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(184,150,90,.2);
+  border:1.5px solid var(--gold-l);
+  color:var(--gold-l);
+  padding:5px 16px;border-radius:20px;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  margin-bottom:10px;
+}
+.hero-title{
+  color:var(--white);
+  font-size:1.65rem;font-weight:900;
+  line-height:1.25;text-shadow:0 2px 12px rgba(0,0,0,.4);
+}
+.hero-title span{color:var(--gold-l)}
+.hero-city{
+  color:rgba(255,255,255,.8);
+  font-size:.9rem;margin-top:6px;font-weight:500;
+}
+
+/* ── OFFER RIBBON ── */
+.offer-ribbon{
+  background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--gold-d));
+  padding:14px 24px;
+  text-align:center;
+  color:var(--white);
+}
+.offer-label{font-size:.78rem;opacity:.9;font-weight:600;letter-spacing:1px}
+.offer-value{font-size:1.5rem;font-weight:900;line-height:1.2}
+.offer-note{font-size:.78rem;opacity:.85}
+
+/* ── BODY ── */
+.card-body{padding:24px 22px 22px}
+
+/* section titles */
+.sec-title{
+  display:flex;align-items:center;gap:8px;
+  font-size:.82rem;font-weight:800;color:var(--gold-d);
+  letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.sec-title::before{content:'';flex:1;height:1.5px;background:linear-gradient(to right,var(--gold),transparent)}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+.svc-item{
+  background:var(--white);
+  border:1.5px solid #EDE5D8;
+  border-radius:12px;
+  padding:12px 10px;
+  text-align:center;
+  transition:box-shadow .2s,transform .2s;
+}
+.svc-item:hover{box-shadow:0 4px 16px rgba(184,150,90,.2);transform:translateY(-2px)}
+.svc-icon{font-size:1.5rem;margin-bottom:5px;display:block}
+.svc-name{font-size:.82rem;font-weight:800;color:var(--navy);display:block}
+.svc-desc{font-size:.72rem;color:#888;margin-top:2px;line-height:1.4}
+
+/* FEATURES */
+.features{margin-bottom:22px}
+.feat-item{
+  display:flex;align-items:flex-start;gap:10px;
+  margin-bottom:9px;
+}
+.feat-dot{
+  width:22px;height:22px;min-width:22px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-d));
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:var(--white);
+  margin-top:1px;
+}
+.feat-text strong{display:block;font-size:.88rem;font-weight:800;color:var(--navy)}
+.feat-text span{font-size:.78rem;color:#777;line-height:1.5}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(to left,transparent,#EDE5D8,transparent);margin:18px 0}
+
+/* CONTACT STRIP */
+.contact-strip{
+  background:var(--navy);
+  border-radius:14px;
+  padding:14px 16px;
+  margin-bottom:14px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;
+}
+.contact-num{
+  color:var(--gold-l);
+  font-size:1.1rem;font-weight:900;
+  direction:ltr;display:inline-block;
+  text-decoration:none;
+}
+.contact-label{color:rgba(255,255,255,.65);font-size:.76rem;font-weight:600}
+
+/* CTA BUTTONS */
+.cta-row{display:flex;gap:10px;margin-bottom:16px}
+.cta-btn{
+  flex:1;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 10px;
+  border-radius:50px;
+  font-size:.95rem;font-weight:800;
+  text-decoration:none;
+  transition:all .25s;
+  font-family:'Tajawal',sans-serif;
+}
+.cta-wa{
+  background:var(--green);color:var(--white);
+  box-shadow:0 4px 16px rgba(37,211,102,.35);
+}
+.cta-wa:hover{background:#1aad54;transform:translateY(-2px);box-shadow:0 7px 22px rgba(37,211,102,.45)}
+.cta-tel{
+  background:var(--blue);color:var(--white);
+  box-shadow:0 4px 16px rgba(26,115,232,.35);
+}
+.cta-tel:hover{background:#1557b0;transform:translateY(-2px);box-shadow:0 7px 22px rgba(26,115,232,.45)}
+.cta-btn svg{width:20px;height:20px;fill:var(--white);flex-shrink:0}
+
+/* FOOTER */
+.card-footer{
+  background:#F5EFE6;
+  border-top:1.5px solid #EDE5D8;
+  padding:12px 22px;
+  display:flex;flex-direction:column;gap:3px;
+  align-items:center;
+  text-align:center;
+}
+.rights{font-size:.73rem;color:#999}
+.designer{font-size:.75rem;color:#888;display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center}
+.designer a{color:var(--gold-d);text-decoration:none;font-weight:800}
+.designer a:hover{color:var(--gold)}
+.designer svg{width:14px;height:14px;fill:var(--green)}
+
+/* FLOATING BTNS */
+.float-wrap{
+  position:fixed;left:18px;bottom:24px;
+  display:flex;flex-direction:column;gap:12px;z-index:999;
+}
+.float-btn{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  box-shadow:0 4px 18px rgba(0,0,0,.3);
+  transition:transform .25s,box-shadow .25s;
+  position:relative;
+}
+.float-btn:hover{transform:scale(1.1) translateY(-2px);box-shadow:0 8px 26px rgba(0,0,0,.35)}
+.float-btn.wa{background:var(--green)}
+.float-btn.tel{background:var(--blue)}
+.float-btn svg{width:24px;height:24px;fill:#fff}
+.float-tip{
+  position:absolute;left:60px;
+  background:rgba(0,0,0,.72);color:#fff;
+  padding:4px 11px;border-radius:8px;
+  font-size:12px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .2s;
+  font-family:'Tajawal',sans-serif;
+}
+.float-btn:hover .float-tip{opacity:1}
+
+/* SHIMMER ANIMATION ON RIBBON */
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+.offer-ribbon{
+  background-size:200% auto;
+  animation:shimmer 4s linear infinite;
+}
+</style>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D93EDGRC77UARCKAUAK0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+</head>
+<body>
+
+<div class="card">
+
+  <!-- HERO -->
+  <div class="card-hero">
+    <div class="hero-content">
+      <div class="brand-badge">✦ درسنج روم للأثاث ✦</div>
+      <h1 class="hero-title">غرف نوم <span>فاخرة</span><br/>تليق بأحلامك</h1>
+      <p class="hero-city">📍 المملكة العربية السعودية — التوصيل لجميع المناطق</p>
+    </div>
+  </div>
+
+  <!-- OFFER RIBBON -->
+  <div class="offer-ribbon">
+    <div class="offer-label">✦ عرض خاص الآن ✦</div>
+    <div class="offer-value">استشارة تصميم مجانية</div>
+    <div class="offer-note">+ ضمان الجودة على جميع المنتجات</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="card-body">
+
+    <!-- SERVICES -->
+    <div class="sec-title">خدماتنا</div>
+    <div class="services">
+      <div class="svc-item">
+        <span class="svc-icon">🪵</span>
+        <span class="svc-name">تفصيل حسب الطلب</span>
+        <span class="svc-desc">مقاسات وألوان وخامات حسب اختيارك</span>
+      </div>
+      <div class="svc-item">
+        <span class="svc-icon">🛏️</span>
+        <span class="svc-name">غرف جاهزة</span>
+        <span class="svc-desc">تسليم فوري بأعلى معايير الجودة</span>
+      </div>
+      <div class="svc-item">
+        <span class="svc-icon">✨</span>
+        <span class="svc-name">غرف مودرن</span>
+        <span class="svc-desc">تصاميم عصرية أنيقة وعملية</span>
+      </div>
+      <div class="svc-item">
+        <span class="svc-icon">🎨</span>
+        <span class="svc-name">استشارة تصميم</span>
+        <span class="svc-desc">فريق متخصص لمساعدتك في الاختيار</span>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="sec-title">لماذا نحن؟</div>
+    <div class="features">
+      <div class="feat-item">
+        <div class="feat-dot">✓</div>
+        <div class="feat-text">
+          <strong>خبرة أكثر من 10 سنوات</strong>
+          <span>رائدون في عالم غرف النوم الفاخرة</span>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-dot">✓</div>
+        <div class="feat-text">
+          <strong>خامات عالية الجودة</strong>
+          <span>أجود أنواع الأخشاب والمواد المعتمدة</span>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-dot">✓</div>
+        <div class="feat-text">
+          <strong>توصيل وتركيب احترافي</strong>
+          <span>نصل إليك في الوقت المحدد بكل سهولة</span>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-dot">✓</div>
+        <div class="feat-text">
+          <strong>ضمان شامل على جميع المنتجات</strong>
+          <span>ثقتنا بجودتنا تجعلنا نضمن لك</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT STRIP -->
+    <div class="contact-strip">
+      <div>
+        <div class="contact-label">للتواصل والاستفسار</div>
+        <a href="tel:0504213453" class="contact-num" onclick="ttq&&ttq.track('Contact',{description:'phone_strip'})">0504213453</a>
+      </div>
+      <div style="color:rgba(255,255,255,.45);font-size:1.8rem;line-height:1">📞</div>
+    </div>
+
+    <!-- CTA BUTTONS -->
+    <div class="cta-row">
+      <a href="https://wa.me/966504213453?text=مرحباً، أريد الاستفسار عن غرف النوم" class="cta-btn cta-wa" onclick="ttq&&ttq.track('Contact',{description:'whatsapp_cta'})" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.506 3.93 1.395 5.602L0 24l6.578-1.368A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.374l-.36-.214-3.707.972.988-3.615-.234-.373A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+        واتساب
+      </a>
+      <a href="tel:0504213453" class="cta-btn cta-tel" onclick="ttq&&ttq.track('Contact',{description:'cta_button'})">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        اتصل الآن
+      </a>
+    </div>
+
+  </div><!-- /card-body -->
+
+  <!-- FOOTER -->
+  <div class="card-footer">
+    <div class="rights">© 2025 مؤسسة درسنج روم للأثاث — جميع الحقوق محفوظة</div>
+    <div class="designer">
+      <span>تم التصميم بواسطة</span>
+      <a href="https://wa.me/201029095046" target="_blank" rel="noopener">م. نجوي إبراهيم</a>
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.506 3.93 1.395 5.602L0 24l6.578-1.368A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.374l-.36-.214-3.707.972.988-3.615-.234-.373A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+    </div>
+  </div>
+
+</div><!-- /card -->
+
+<!-- FLOATING BUTTONS -->
+<div class="float-wrap">
+  <a href="https://wa.me/966504213453?text=مرحباً، أريد الاستفسار" class="float-btn wa" onclick="ttq&&ttq.track('Contact',{description:'whatsapp_float'})" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.506 3.93 1.395 5.602L0 24l6.578-1.368A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.794 9.794 0 01-5.003-1.374l-.36-.214-3.707.972.988-3.615-.234-.373A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+    <span class="float-tip">واتساب</span>
+  </a>
+  <a href="tel:0504213453" class="float-btn tel" onclick="ttq&&ttq.track('Contact',{description:'float_button'})" aria-label="اتصل بنا">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    <span class="float-tip">اتصل بنا</span>
+  </a>
+</div>
+
+<script>
+// Ripple effect on CTA buttons
+document.querySelectorAll('.cta-btn').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    const r=document.createElement('span');
+    const d=Math.max(this.clientWidth,this.clientHeight);
+    const rect=this.getBoundingClientRect();
+    r.style.cssText=`position:absolute;border-radius:50%;width:${d}px;height:${d}px;
+      left:${e.clientX-rect.left-d/2}px;top:${e.clientY-rect.top-d/2}px;
+      background:rgba(255,255,255,0.3);transform:scale(0);animation:ripple .5s ease forwards;pointer-events:none`;
+    if(!document.querySelector('#ripple-style')){
+      const s=document.createElement('style');
+      s.id='ripple-style';
+      s.textContent='@keyframes ripple{to{transform:scale(2.5);opacity:0}}';
+      document.head.appendChild(s);
+    }
+    this.style.position='relative';this.style.overflow='hidden';
+    this.appendChild(r);
+    setTimeout(()=>r.remove(),550);
+  });
+});
+</script>
+</body>
+</html>
